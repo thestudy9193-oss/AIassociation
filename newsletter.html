@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뉴스레터 구독신청 - 한국AI비즈니스협회</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="file:///Users/kimyiseul/.gemini/antigravity/brain/82c752fe-0c54-4274-918f-98b4086f8f27/ai_logo_1778078591273.png" alt="로고" class="logo-img">
+      <span class="logo-text">한국AI비즈니스협회</span>
+    </a>
+    <nav class="nav" id="nav">
+      <div class="nav-item">
+        <a href="index.html#about">협회소개 <span class="nav-arrow">▾</span></a>
+        <div class="dropdown">
+          <div class="dropdown-header">협회소개</div>
+          <a href="about-greeting.html">인사말</a>
+          <a href="about-overview.html">협회개요</a>
+          <a href="about-organization.html">조직구성</a>
+          <a href="about-location.html">오시는길</a>
+        </div>
+      </div>
+      <a href="index.html#business">사업분야</a>
+      <a href="index.html#education">교육</a>
+      <div class="nav-item">
+        <a href="index.html#partners">회원마당 <span class="nav-arrow">▾</span></a>
+        <div class="dropdown">
+          <div class="dropdown-header">회원마당</div>
+          <a href="member-guide.html">가입안내</a>
+          <a href="member-join.html">가입신청</a>
+          <a href="member-list.html">회원사 현황</a>
+          <a href="member-benefits.html">회원사 혜택</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="index.html#news">알림마당 <span class="nav-arrow">▾</span></a>
+        <div class="dropdown">
+          <div class="dropdown-header">알림마당</div>
+          <a href="notice.html">공지사항</a>
+          <a href="assoc-news.html">협회소식</a>
+          <a href="member-news.html">회원사 소식</a>
+          <a href="ai-trend.html">AI 동향</a>
+          <a href="newsletter.html">뉴스레터</a>
+        </div>
+      </div>
+      <a href="index.html#contact">문의</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-login" onclick="alert('로그인 페이지로 이동합니다.')">로그인</button>
+      <button class="btn-join" onclick="location.href='member-join.html'">협회 가입신청</button>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-banner">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">홈</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>뉴스레터 구독신청</span>
+    </div>
+    <h1>뉴스레터 구독신청</h1>
+    <p>AI 트렌드와 협회 소식을 이메일로 받아보세요</p>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="container">
+    <div class="newsletter-layout">
+      <!-- 왼쪽: 안내 -->
+      <div class="newsletter-info">
+        <span class="section-label">Newsletter</span>
+        <h2>AI 인사이트를<br>매주 받아보세요</h2>
+        <p>한국AI비즈니스협회의 뉴스레터는 바쁜 직장인과 AI 입문자 모두를 위한 알기 쉬운 AI 정보를 매주 제공합니다. 최신 AI 트렌드부터 협회 행사 일정까지 한 눈에 확인하세요.</p>
+        <ul class="newsletter-feature-list">
+          <li><span>📰</span> 매주 월요일 오전 발송</li>
+          <li><span>🤖</span> AI 최신 트렌드 & 뉴스 큐레이션</li>
+          <li><span>🎓</span> 교육 일정 및 행사 안내</li>
+          <li><span>📊</span> AI 리포트 & 가이드 무료 제공</li>
+          <li><span>✉️</span> 언제든 구독 해지 가능</li>
+        </ul>
+
+        <div class="newsletter-preview">
+          <h4>PREVIEW</h4>
+          <h3>이번 주 AI Weekly Update</h3>
+          <ul class="newsletter-preview-items">
+            <li>GPT-5 발표와 국내 기업 도입 현황 분석</li>
+            <li>AI 규제 국제 표준화 동향 리포트</li>
+            <li>6월 정기 조찬포럼 안내 — AI 시대의 비즈니스 혁신</li>
+            <li>회원사 소식: SK텔레콤 AI 에이전트 상용화 성공</li>
+            <li>교육 모집: 2026년 2분기 입문 교육 수강생 모집</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 오른쪽: 구독 폼 -->
+      <div class="newsletter-form-wrap">
+        <form onsubmit="event.preventDefault(); document.getElementById('successMsg').style.display='block'; this.style.display='none';">
+          <div style="margin-bottom:40px;">
+            <h2 style="font-size:26px; font-weight:900; color:var(--primary); margin-bottom:8px;">구독신청</h2>
+            <p style="font-size:15px; color:var(--text-secondary);">아래 정보를 입력하고 무료로 구독하세요</p>
+          </div>
+
+          <div class="form-group">
+            <label for="nl-name">이름 <span style="color:var(--accent);">*</span></label>
+            <input type="text" id="nl-name" placeholder="이름을 입력해주세요" required>
+          </div>
+          <div class="form-group">
+            <label for="nl-email">이메일 <span style="color:var(--accent);">*</span></label>
+            <input type="email" id="nl-email" placeholder="받을 이메일 주소를 입력해주세요" required>
+          </div>
+          <div class="form-group">
+            <label for="nl-org">소속 (선택)</label>
+            <input type="text" id="nl-org" placeholder="소속 기관 또는 회사명">
+          </div>
+
+          <div class="form-group">
+            <label>관심 분야 (선택, 복수 가능)</label>
+            <div class="checkbox-group">
+              <label class="checkbox-item"><input type="checkbox"> AI 트렌드</label>
+              <label class="checkbox-item"><input type="checkbox"> AI 교육</label>
+              <label class="checkbox-item"><input type="checkbox"> AI 정책</label>
+              <label class="checkbox-item"><input type="checkbox"> AI 비즈니스</label>
+              <label class="checkbox-item"><input type="checkbox"> AI 윤리</label>
+              <label class="checkbox-item"><input type="checkbox"> 행사 안내</label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:24px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:600;cursor:pointer;color:var(--text-secondary);line-height:1.6;">
+              <input type="checkbox" required style="accent-color:var(--primary);width:16px;height:16px;flex-shrink:0;margin-top:2px;">
+              개인정보 수집 및 이용에 동의합니다. (필수) — 수집된 이메일은 뉴스레터 발송 목적으로만 사용되며 언제든지 수신 거부할 수 있습니다.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit" style="margin-top:32px;">무료 구독신청하기</button>
+
+          <p style="text-align:center; margin-top:20px; font-size:13px; color:var(--text-muted);">
+            언제든지 구독을 해지할 수 있습니다. 스팸 메일은 발송하지 않습니다.
+          </p>
+        </form>
+
+        <!-- 성공 메시지 -->
+        <div id="successMsg" style="display:none; text-align:center; padding:64px 32px;">
+          <div style="font-size:64px; margin-bottom:24px;">🎉</div>
+          <h3 style="font-size:26px; font-weight:900; color:var(--primary); margin-bottom:16px;">구독신청 완료!</h3>
+          <p style="font-size:16px; color:var(--text-secondary); line-height:1.8; margin-bottom:32px;">
+            이번 주 월요일부터 AI Weekly Update를 받아보실 수 있습니다.<br>
+            확인 이메일이 곧 발송됩니다.
+          </p>
+          <a href="index.html" class="btn-primary">홈으로 돌아가기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 과거 뉴스레터 섹션 -->
+<section class="page-section page-section-alt">
+  <div class="container">
+    <div class="page-section-title" style="text-align:center;">
+      <span class="section-label">Archive</span>
+      <h2>지난 뉴스레터</h2>
+      <p>구독 전 지난 호를 미리 확인해보세요</p>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-img" style="background:var(--primary); display:flex; align-items:center; justify-content:center; font-size:40px;">📬</div>
+        <span class="news-date">Vol. 108 · 2026.06.02</span>
+        <h3>AI 에이전트 시대의 개막</h3>
+        <p>자율적으로 작동하는 AI 에이전트가 기업 현장에 본격 도입되고 있습니다.</p>
+        <span class="news-tag">AI 트렌드</span>
+      </div>
+      <div class="news-card">
+        <div class="news-img" style="background:var(--secondary); display:flex; align-items:center; justify-content:center; font-size:40px;">📋</div>
+        <span class="news-date">Vol. 107 · 2026.05.26</span>
+        <h3>EU AI Act 시행과 국내 기업 대응 전략</h3>
+        <p>유럽의 AI 규제가 국내 수출 기업에 미치는 영향을 분석합니다.</p>
+        <span class="news-tag">AI 정책</span>
+      </div>
+      <div class="news-card">
+        <div class="news-img" style="background:#1E3A8A; display:flex; align-items:center; justify-content:center; font-size:40px;">🎓</div>
+        <span class="news-date">Vol. 106 · 2026.05.19</span>
+        <h3>2026년 AI 교육 트렌드 리포트</h3>
+        <p>프롬프트 엔지니어링부터 AI 리터러시까지, 올해 뜨는 AI 교육 분야를 소개합니다.</p>
+        <span class="news-tag">AI 교육</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="file:///Users/kimyiseul/.gemini/antigravity/brain/82c752fe-0c54-4274-918f-98b4086f8f27/ai_logo_1778078591273.png" alt="로고" class="logo-img">
+          <span class="logo-text">한국AI비즈니스협회</span>
+        </a>
+        <p>AI 비즈니스 생태계를 선도하는 대한민국 대표 AI 산업 협회입니다. 기업·스타트업·연구기관이 함께 성장합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>협회소개</h4>
+        <ul>
+          <li><a href="about-greeting.html">인사말</a></li>
+          <li><a href="about-overview.html">협회개요</a></li>
+          <li><a href="about-organization.html">조직구성</a></li>
+          <li><a href="about-location.html">오시는길</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>회원마당</h4>
+        <ul>
+          <li><a href="member-guide.html">가입안내</a></li>
+          <li><a href="member-join.html">가입신청</a></li>
+          <li><a href="member-list.html">회원사 현황</a></li>
+          <li><a href="member-benefits.html">회원사 혜택</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>서비스</h4>
+        <ul>
+          <li><a href="newsletter.html">뉴스레터 구독</a></li>
+          <li><a href="index.html#news">뉴스/공지</a></li>
+          <li><a href="index.html#resources">자료실</a></li>
+          <li><a href="index.html#contact">문의하기</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 한국AI비즈니스협회. All rights reserved.</span>
+      <span>산업 협회</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
